@@ -1,0 +1,14 @@
+.contactAuther{
+    width: 80%;
+    position: relative;
+    margin: 10% 0 0 10%;
+    border: none;
+}
+.contactAuther img{
+    width: 100%;
+    /* border-bottom: 200px; */
+    margin: 5% 0 0 0;
+}
+.foot{
+    min-height: 200px;
+}

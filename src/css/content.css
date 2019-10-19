@@ -1,0 +1,97 @@
+.article{
+    position: relative;
+    width: 100%;
+    color: #c2c2c2;
+    /* margin: 0 auto; */
+}
+.article li>h5{
+    font-size: 32px;
+    color: #c2c2c2;
+    margin: 1% 0 0 2%;
+}
+.article li>span{
+    font-size: 18px;
+    display: block;
+    margin: 1% 0 0 0%;
+    width: 46%;
+}
+.article li>textarea{
+    width: 90%;
+    height: 600px;
+    margin: 2% 0 0 5%;
+    /* background: #9999; */
+    background: black;
+    border: none;
+    padding: 2% 0 0 2%;
+    color: bisque;
+    min-height: 200px;
+}
+.article li{
+    margin-bottom: 50px;
+}
+.footer{
+    width: 96%;
+    margin: 5% 0 0 2%;
+}
+.evaluate{
+    width: 20%;
+    position: relative;
+    margin: 1% 0 0 2%;
+}
+.evaluate>i{
+    width: 30px;
+    height: 15px;
+    font-size: 16px;
+    font-style: normal;
+}
+.comment{
+    margin-top: 10%;
+}
+.article li>p{
+    font-size: 24px;
+    margin: 0 0 0 5%;
+}
+.article li>input{
+    width: 90%;
+    margin: 2% 0 0 5%;
+    background: black;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #9999;
+}
+.article li>button{
+    float: right;
+    margin: -5% 5% 0 0;
+}
+.comment li{
+    border-bottom: 1px solid #c2c2c2;
+    width: 90%;
+    margin: 0 0 0 5%;
+    min-height: 100px;
+}
+.ant-comment-actions{
+    display: none;
+}
+.comment li>button{
+    float: right;
+    margin: -4% 0 0 0;
+}
+.ant-modal-body>input{
+    outline: none;
+    border: none;
+    width: 80%;
+    border-bottom: 1px solid #c2c2c2;
+}
+.ant-comment-content-author>span{
+    font-style: normal;
+    color: #c2c2c2;
+}
+.footer>.comment ul{
+    width: 100%;
+    margin: 2% 0 0 0;
+}
+.footer>.comment li{
+    font-size: 16px;
+    height: 20px;
+    margin: 2% 0 0 5%;
+}
