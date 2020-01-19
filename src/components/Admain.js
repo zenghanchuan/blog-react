@@ -21,7 +21,7 @@ class Admain extends React.Component{
           var that = this;
           console.log(this.state.username,this.state.password)
           if(that.state.username != ''){
-                axios.post('http://118.24.116.33:8030/findUsers',{username:that.state.username}).then(function(res){
+                axios.post('http://47.99.98.134:8030/findUsers',{username:that.state.username}).then(function(res){
                 console.log(res)
                 if(res.data.code == '2'){
                     alert('该账号未注册')

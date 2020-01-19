@@ -81,7 +81,7 @@ class Content extends React.Component{
       }
       else if(token == 'true'){
         console.log(that.state.commentVal[e.target.name]._id)
-        axios.post('http://118.24.116.33:8030/remvoeComment',{id:that.state.commentVal[e.target.name]._id}).then(function(res){
+        axios.post('http://47.99.98.134:8030/remvoeComment',{id:that.state.commentVal[e.target.name]._id}).then(function(res){
           console.log(res)
           if(res.data.code == '1'){
             // message.info('成功删除'+ that.state.commentVal[e.target.name].name + '的评论');
@@ -109,7 +109,7 @@ class Content extends React.Component{
       console.log(nowTime)
       console.log(that.state.inputvalue)
       if(that.state.inputvalue){
-        axios.post('http://118.24.116.33:8030/saveComment',{name:that.state.inputname,content:that.state.inputvalue,data:nowTime,article:that.state.articleId}).then(function(res){
+        axios.post('http://47.99.98.134:8030/saveComment',{name:that.state.inputname,content:that.state.inputvalue,data:nowTime,article:that.state.articleId}).then(function(res){
         console.log(res)
         if(res.data.code == '1'){
           message.info('评论成功了哈!');
@@ -130,26 +130,31 @@ class Content extends React.Component{
     componentWillMount = ()=>{
       console.log(789)
       var that = this;
-      axios.post('http://118.24.116.33:8030/findDynamic',{username:'15882004659'}).then(function(res){
-        console.log(res)
+      axios.post('http://47.99.98.134:8030/findDynamic',{username:'15882004659'}).then(function(res){
         var index = (res.data.message.length)-1;
         if(res.data.code == '1'){
-          console.log((res.data.message)[index])
           that.state.dataVal.push((res.data.message)[index])
           that.setState({articleId:(res.data.message)[index]._id})
-          console.log(that.state.articleId)
+          axios.post('http://47.99.98.134:8030/findComment',{article:that.state.articleId}).then(function(res){
+            console.log(res)
+            if(res.data.code == '1'){
+              that.setState({commentVal:res.data.message})
+            }
+          }).catch(function(err){
+            console.log(err)
+          })
         }
       }).catch(function(err){
         console.log(err)
       })
-      axios.post('http://118.24.116.33:8030/findComment',{article:that.state.articleId}).then(function(res){
-        console.log(res)
-        if(res.data.code == '1'){
-          that.setState({commentVal:res.data.message})
-        }
-      }).catch(function(err){
-        console.log(err)
-      })
+      // axios.post('http://47.99.98.134:8030/findComment',{article:that.state.articleId}).then(function(res){
+      //   console.log(res)
+      //   if(res.data.code == '1'){
+      //     that.setState({commentVal:res.data.message})
+      //   }
+      // }).catch(function(err){
+      //   console.log(err)
+      // })
     }
     render(){
         const { likes, dislikes, action } = this.state;

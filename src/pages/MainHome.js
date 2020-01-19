@@ -84,14 +84,14 @@ class MainHome extends React.Component{
                 return;
             }
             else if(token == 'true'){
-                that.setState({display:'http://118.24.116.33:8030'})
+                that.setState({display:'http://47.99.98.134:8030'})
             }
         }
     }
     componentWillMount=()=>{
     console.log(666)
     var that = this;
-    axios.post('http://118.24.116.33:8030/findUsers',{username:'15882004659'}).then(function(res){
+    axios.post('http://47.99.98.134:8030/findUsers',{username:'15882004659'}).then(function(res){
         console.log(res.data.message)
         if(res.data.code == '1'){
             that.setState({name:res.data.message.name,job:res.data.message.job,constellation:res.data.message.constellation})

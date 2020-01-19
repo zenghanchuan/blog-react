@@ -51,7 +51,7 @@ class Lately extends React.Component{
       };
       componentWillMount =()=>{
         var that = this;
-      axios.post('http://118.24.116.33:8030/findDynamic',{username:'15882004659'}).then(function(res){
+      axios.post('http://47.99.98.134:8030/findDynamic',{username:'15882004659'}).then(function(res){
         console.log(res)
         if(res.data.code == '1'){
           that.setState({latelyVal:res.data.message})
